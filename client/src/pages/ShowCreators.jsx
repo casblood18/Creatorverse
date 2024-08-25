@@ -20,16 +20,19 @@ function ShowCreators() {
   }, []);
 
   const handleDelete = (id) => {
-    setCreators(creators.filter((creator) => creator.id !== id));
+    const isConfirmed = window.confirm("Are you sure you want to delete this creator?");
+    
+    if (isConfirmed) {
+      setCreators(creators.filter((creator) => creator.id !== id));
+    } else {
+
+      return;
+    }
   };
 
   return (
     <div>
-      <h1>Creatorverse</h1>
-      <Link to="/add">
-        <button>Add New Creator</button>
-      </Link>
-      <div>
+      <div className="creator-cards-container">
         {creators.length > 0 ? (
           creators.map((creator) => (
             <CreatorCard

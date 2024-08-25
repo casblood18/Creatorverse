@@ -26,15 +26,13 @@ function ViewCreator() {
   if (!creator) return <p>Loading...</p>;
 
   return (
-    <div>
+    <div className="creator-details">
       <h2>{creator.name}</h2>
+      <img src={creator.imageURL || 'https://via.placeholder.com/150'} alt={`${creator.name}`} />
       <p>{creator.description}</p>
       <a href={creator.url} target="_blank" rel="noopener noreferrer">
         Visit Channel
       </a>
-      {creator.imageURL && (
-        <img src={creator.imageURL} alt={`${creator.name}`} />
-      )}
     </div>
   );
 }

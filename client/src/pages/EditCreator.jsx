@@ -44,7 +44,7 @@ function EditCreator() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="edit">
       <input
         type="text"
         value={name}

@@ -3,7 +3,6 @@ import ShowCreators from './pages/ShowCreators';
 import ViewCreator from './pages/ViewCreator';
 import AddCreator from './pages/AddCreator';
 import EditCreator from './pages/EditCreator';
-require('dotenv').config();
 
 function App() {
   const routes = useRoutes([
@@ -15,10 +14,16 @@ function App() {
 
   return (
     <div>
-      <nav>
-        <Link to="/">Home</Link> | <Link to="/add">Add New Creator</Link>
-      </nav>
-      {routes}
+      <div className='header'>
+        <h1 className="headline">Creatorverse</h1>
+        <nav>
+          <Link to="/">Show all Creators</Link> 
+          <Link to="/add">Add New Creator</Link>
+        </nav>
+      </div>
+      <div>
+        {routes}
+      </div>
     </div>
   );
 }
