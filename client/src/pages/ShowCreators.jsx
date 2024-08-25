@@ -20,14 +20,7 @@ function ShowCreators() {
   }, []);
 
   const handleDelete = (id) => {
-    const isConfirmed = window.confirm("Are you sure you want to delete this creator?");
-    
-    if (isConfirmed) {
-      setCreators(creators.filter((creator) => creator.id !== id));
-    } else {
-
-      return;
-    }
+    setCreators(creators.filter((creator) => creator.id !== id));
   };
 
   return (
